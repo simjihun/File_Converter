@@ -1,0 +1,4 @@
+"# File_Converter"  init
+"# File_Converter"  commit -m "first commit"
+"# File_Converter"  remote add origin https://github.com/simjihun/File_Converter.git
+"# File_Converter"  push -u origin master

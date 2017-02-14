@@ -117,22 +117,26 @@ namespace FileConvert
                     }
                     if (File.Exists(newDir))
                     {
-                        
-                    }else
+                        MessageBox.Show("변환한 파일이 이미 존재합니다. 삭제하고 다시 변환해주세요.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
                     {
                         File.AppendAllText(newDir, con, Encoding.Default);
-                    }
-                    
+                        MessageBox.Show("파일이 [" + newDir + "] 경로로 변환되었습니다.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }                    
                     //Byte[] info = new UTF8Encoding(true).GetBytes(txt.Insert(0, txtSave));
                     //FileStream fs = File.Open(saveC+saveAuto, FileMode.Append);
                     //fs.Write(info, 0, info.Length);
-                    //fs.Close();
-                    //MessageBox.Show("값을 알아보자 : " + info.ToString(), "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    MessageBox.Show("파일이 [" + newDir + "] 경로로 변환되었습니다.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    //fs.Close();             
                 }
-                catch (IOException)
+                catch (IOException ioe)
                 {
-                    MessageBox.Show("에러발생", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("에러발생 : " + ioe.Message , "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                catch(AccessViolationException ave)
+                {
+                    MessageBox.Show("에러발생 : " + ave.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
             }
@@ -144,7 +148,8 @@ namespace FileConvert
 
         private void 버전정보ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            version v = new version();
+            v.ShowDialog();
         }
 
         private void 폴더열기ToolStripMenuItem_Click(object sender, EventArgs e)
