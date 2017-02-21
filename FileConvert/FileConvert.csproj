@@ -13,7 +13,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <PublishUrl>C:\파일컨버터\</PublishUrl>
+    <PublishUrl>C:\파일변환프로그램\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
@@ -23,6 +23,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
+    <SupportUrl>http://www.tidekorea.com</SupportUrl>
     <ProductName>File Converter</ProductName>
     <PublisherName>Tide</PublisherName>
     <SuiteName>Converter</SuiteName>
@@ -69,6 +70,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>FileConvert_TemporaryKey.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>favicon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -138,6 +142,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="favicon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
